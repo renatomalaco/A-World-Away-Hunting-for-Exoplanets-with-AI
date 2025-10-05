@@ -1,18 +1,10 @@
-import { Route, Routes } from 'react-router-dom';
-import Layout from './components/Layout';
-import Dashboard from './pages/Dashboard';
-import Arquivos from './pages/Arquivos';
-import Sobre from './pages/Sobre';
+import Arquivos from './pages/Arquivos'; // ou './components/Arquivos'
 
 function App() {
   return (
-    <Routes>
-      <Route element={<Layout />}>
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/arquivos" element={<Arquivos />} />
-        <Route path="/sobre" element={<Sobre />} />
-      </Route>
-    </Routes>
+    <div className="p-6">
+      <Arquivos />
+    </div>
   );
 }
 
