@@ -3,10 +3,10 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu, Telescope, LayoutDashboard, FileUp, Info } from 'lucide-react';
+import { Menu, Telescope, EarthIcon, FileUp, Info } from 'lucide-react';
 
 const navItems = [
-  { label: 'Dashboard', to: '/', icon: <LayoutDashboard className="h-5 w-5" /> },
+  { label: 'Home', to: '/', icon: <EarthIcon className="h-5 w-5" /> },
   { label: 'Arquivos', to: '/arquivos', icon: <FileUp className="h-5 w-5" /> },
   { label: 'Sobre', to: '/sobre', icon: <Info className="h-5 w-5" /> },
 ];
@@ -14,7 +14,7 @@ const navItems = [
 const Header = () => {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center justify-between">
+      <div className="container pl-5 flex h-16 items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
           <Telescope className="h-6 w-6" />
           <span className="font-bold text-lg">Exoplanet Hunter</span>

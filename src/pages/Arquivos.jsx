@@ -36,22 +36,22 @@ function Arquivos() {
     downloadBlob(headerLine, 'exoplanetas_modelo.csv', 'text/csv;charset=utf-8;');
   };
 
-  const downloadExcel = async () => {
-    try {
-      const XLSX = await import('xlsx');
-      const ws = XLSX.utils.aoa_to_sheet([HEADERS]);
-      const wb = XLSX.utils.book_new();
-      XLSX.utils.book_append_sheet(wb, ws, 'Dados');
-      const wbout = XLSX.write(wb, { bookType: 'xlsx', type: 'array' });
-      downloadBlob(
-        wbout,
-        'exoplanetas_modelo.xlsx',
-        'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
-      );
-    } catch (e) {
-      alert('Para baixar Excel, instale a lib "xlsx": npm i xlsx');
-    }
-  };
+  // const downloadExcel = async () => {
+  //   try {
+  //     const XLSX = await import('xlsx');
+  //     const ws = XLSX.utils.aoa_to_sheet([HEADERS]);
+  //     const wb = XLSX.utils.book_new();
+  //     XLSX.utils.book_append_sheet(wb, ws, 'Dados');
+  //     const wbout = XLSX.write(wb, { bookType: 'xlsx', type: 'array' });
+  //     downloadBlob(
+  //       wbout,
+  //       'exoplanetas_modelo.xlsx',
+  //       'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+  //     );
+  //   } catch (e) {
+  //     alert('Para baixar Excel, instale a lib "xlsx": npm i xlsx');
+  //   }
+  // };
 
   return (
     <div className="flex justify-center items-start">
