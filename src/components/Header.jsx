@@ -1,42 +1,44 @@
+// src/components/Header.jsx
+import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu, Telescope } from 'lucide-react';
+import { Menu, Telescope, LayoutDashboard, FileUp, Info } from 'lucide-react';
 
 const navItems = [
-  { label: 'Início', to: '/' },
-  { label: 'Analisar Dados', to: '/analise' },
-  { label: 'Sobre', to: '/sobre' },
+  { label: 'Dashboard', to: '/', icon: <LayoutDashboard className="h-5 w-5" /> },
+  { label: 'Arquivos', to: '/arquivos', icon: <FileUp className="h-5 w-5" /> },
+  { label: 'Sobre', to: '/sobre', icon: <Info className="h-5 w-5" /> },
 ];
 
 const Header = () => {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
-        {/* Logo and Title */}
         <Link to="/" className="flex items-center gap-2">
           <Telescope className="h-6 w-6" />
           <span className="font-bold text-lg">Exoplanet Hunter</span>
         </Link>
 
-        {/* Desktop Navigation */}
+        {/* Navegação Desktop */}
         <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
           {navItems.map((item) => (
             <NavLink
               key={item.to}
               to={item.to}
               className={({ isActive }) =>
-                `transition-colors hover:text-foreground/80 ${
+                `flex items-center gap-2 transition-colors hover:text-foreground/80 ${
                   isActive ? 'text-foreground' : 'text-foreground/60'
                 }`
               }
             >
+              {item.icon}
               {item.label}
             </NavLink>
           ))}
         </nav>
 
-        {/* Mobile Navigation */}
+        {/* Navegação Mobile */}
         <div className="md:hidden">
           <Sheet>
             <SheetTrigger asChild>
@@ -55,8 +57,9 @@ const Header = () => {
                   <NavLink
                     key={item.to}
                     to={item.to}
-                    className="text-lg font-medium hover:text-primary"
+                    className="flex items-center gap-3 text-lg font-medium hover:text-primary"
                   >
+                    {item.icon && React.cloneElement(item.icon, { className: 'h-6 w-6' })}
                     {item.label}
                   </NavLink>
                 ))}

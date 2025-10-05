@@ -95,12 +95,12 @@ const Analise = () => {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="mb-4">
+            <p className="mb-4 text-base"> {/* Texto aumentado aqui */}
               O arquivo foi processado com sucesso. Abaixo está o resumo das classificações encontradas:
             </p>
             <div className="space-y-2">
                 {Object.entries(predictionCounts).map(([key, value]) => (
-                    <div key={key} className="flex justify-between items-center p-2 rounded-md bg-muted">
+                    <div key={key} className="flex justify-between items-center p-2 rounded-md bg-muted text-base"> {/* E aqui */}
                         <span className="font-semibold">{key}</span>
                         <span className="font-mono bg-primary/10 text-primary px-2 py-1 rounded-md">{value} ocorrências</span>
                     </div>
