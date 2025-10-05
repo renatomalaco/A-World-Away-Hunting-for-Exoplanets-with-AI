@@ -6,7 +6,7 @@ const Layout = () => {
   return (
     <div>
       <Header />
-      <main className="container flex justify-center p-6">
+      <main className="flex justify-center p-6">
         <Outlet />
       </main>
     </div>

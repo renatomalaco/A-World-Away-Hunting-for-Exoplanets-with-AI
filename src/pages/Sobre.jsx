@@ -1,36 +1,95 @@
 // src/pages/Sobre.jsx
-import { Card, CardHeader, CardTitle, CardContent } from '../components/ui/card';
+import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 
-function Sobre() {
+export default function Sobre() {
   return (
-    <div className="flex justify-center">
-      <Card className="max-w-4xl">
-        <CardHeader>
-          <CardTitle>Sobre os Sistemas de Descoberta de Exoplanetas da NASA</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4 text-muted-foreground text-base md:text-lg">
-          <p>
-            A busca por planetas fora do nosso sistema solar, conhecidos como exoplanetas, é uma das fronteiras mais excitantes da astronomia moderna. A NASA lidera essa exploração com missões espaciais dedicadas, que utilizam tecnologias avançadas para detectar e caracterizar mundos distantes.
-          </p>
-          <div>
-            <h3 className="font-semibold text-foreground mb-2">Telescópio Espacial Kepler</h3>
-            <p>
-              Lançado em 2009, o Kepler foi pioneiro na caça a exoplanetas usando o método de trânsito. Ele monitorou continuamente o brilho de mais de 150.000 estrelas, procurando por pequenas quedas de luminosidade causadas pela passagem de um planeta em frente à sua estrela. A missão Kepler revolucionou nosso entendimento, revelando que os planetas são mais comuns do que estrelas na nossa galáxia e descobrindo milhares de exoplanetas, incluindo muitos rochosos e de tamanho semelhante à Terra em zonas habitáveis (NASA, 2018).
-            </p>
-          </div>
-          <div>
-            <h3 className="font-semibold text-foreground mb-2">Transiting Exoplanet Survey Satellite (TESS)</h3>
-            <p>
-              O TESS, lançado em 2018, é o sucessor do Kepler. Enquanto Kepler focava em uma pequena porção do céu, o TESS escaneia quase todo o céu, observando as estrelas mais brilhantes e próximas da Terra. O objetivo principal do TESS é encontrar exoplanetas que orbitam estrelas próximas, tornando-os alvos ideais para estudos de acompanhamento com telescópios como o James Webb Space Telescope (JWST). Esses estudos podem analisar as atmosferas dos planetas em busca de sinais de vida (Ricker et al., 2015).
-            </p>
-          </div>
-          <p>
-            Essas missões fornecem dados cruciais, como o período orbital, raio planetário e duração do trânsito, que são a base para determinar a temperatura, massa e potencial de habitabilidade de novos mundos.
-          </p>
-        </CardContent>
-      </Card>
-    </div>
-  );
-}
+    <Card className="w-full max-w-6xl mx-auto bg-card/80 backdrop-blur-sm border-border/40 shadow-2xl">
+      {/* Header */}
+      <CardHeader className="text-center bg-white/5 p-8 border-b border-border/40">
+        <h1 className="text-4xl sm:text-5xl font-extrabold text-primary leading-tight tracking-wider">
+          Exoplanet Explorer 🔭
+        </h1>
+        <p className="text-lg sm:text-xl text-muted-foreground font-light max-w-2xl mx-auto pt-2">
+          Desvendando os segredos do universo com Inteligência Artificial e paixão pela descoberta.
+        </p>
+      </CardHeader>
 
-export default Sobre;
+      {/* Content */}
+      <CardContent className="p-8 sm:p-12 space-y-10 text-muted-foreground">
+        {/* Sobre o Projeto */}
+        <div>
+          <h2 className="text-3xl font-bold text-card-foreground mb-4 border-b border-border/40 pb-3">
+            Sobre o Projeto: <span className="text-primary">Exoplanet Explorer</span>
+          </h2>
+          <div className="space-y-4 text-base sm:text-lg leading-relaxed">
+            <p>
+              Bem-vindo ao nosso projeto para o <strong className="text-card-foreground">NASA Space Apps Challenge 2025</strong>! Somos um grupo de estudantes de Ciência da Computação e Desenvolvimento de Sistemas, apaixonados pela vastidão do cosmos e pelo poder da tecnologia.
+            </p>
+            <p>
+              Nosso projeto utiliza <strong className="text-card-foreground">Inteligência Artificial</strong> para automatizar e aprimorar a identificação de novos mundos orbitando estrelas distantes.
+            </p>
+          </div>
+        </div>
+
+        {/* Desafio */}
+        <div>
+          <h2 className="text-3xl font-bold text-card-foreground mb-4 border-b border-border/40 pb-3">
+            O Desafio: Encontrando Agulhas no Palheiro Cósmico
+          </h2>
+          <div className="space-y-4 text-base sm:text-lg leading-relaxed">
+            <p>
+              Telescópios como o Kepler e o TESS geram uma quantidade colossal de dados ao observar o brilho de centenas de milhares de estrelas simultaneamente (método de trânsito).
+            </p>
+            <p>
+              Esses sinais são sutis e podem confundir com ruído/efeitos estelares. Analisar tudo manualmente é inviável — precisamos acelerar sem perder precisão.
+            </p>
+          </div>
+        </div>
+
+        {/* Solução */}
+        <div>
+          <h2 className="text-3xl font-bold text-card-foreground mb-4 border-b border-border/40 pb-3">
+            Nossa Solução: IA Treinada para Caçar Planetas
+          </h2>
+          <div className="space-y-4 text-base sm:text-lg leading-relaxed">
+            <p>
+              Desenvolvemos um pipeline de Machine Learning para classificar sinais como candidato/confirmado/falso positivo.
+            </p>
+            <p>Fluxo resumido:</p>
+            <ul className="list-disc list-inside space-y-6 pl-4">
+              <li>
+                <strong className="text-primary">Preparação de Dados:</strong> <code className="font-mono bg-muted/70 text-muted-foreground px-2 py-1 rounded-md">pandas</code>, <code className="font-mono bg-muted/70 text-muted-foreground px-2 py-1 rounded-md">StandardScaler</code>, <code className="font-mono bg-muted/70 text-muted-foreground px-2 py-1 rounded-md">LabelEncoder</code>.
+              </li>
+              <li>
+                <strong className="text-primary">Modelo:</strong> <code className="font-mono bg-muted/70 text-muted-foreground px-2 py-1 rounded-md">VotingClassifier</code> combinando
+                <ul className="list-disc list-inside ml-6 mt-2 space-y-2 text-base">
+                  <li><code className="font-mono bg-muted/70 text-muted-foreground px-2 py-1 rounded-md">LogisticRegression</code></li>
+                  <li><code className="font-mono bg-muted/70 text-muted-foreground px-2 py-1 rounded-md">KNeighborsClassifier</code></li>
+                  <li><code className="font-mono bg-muted/70 text-muted-foreground px-2 py-1 rounded-md">RandomForestClassifier</code></li>
+                </ul>
+              </li>
+              <li>
+                <strong className="text-primary">Validação:</strong> <code className="font-mono bg-muted/70 text-muted-foreground px-2 py-1 rounded-md">accuracy_score</code>, <code className="font-mono bg-muted/70 text-muted-foreground px-2 py-1 rounded-md">classification_report</code>, export com <code className="font-mono bg-muted/70 text-muted-foreground px-2 py-1 rounded-md">joblib</code>.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Quem Somos */}
+        <div>
+          <h2 className="text-3xl font-bold text-card-foreground mb-4 border-b border-border/40 pb-3">
+            Quem Somos
+          </h2>
+          <p className="text-base sm:text-lg leading-relaxed">
+            Equipe de estudantes curiosos, focados em aplicar IA em problemas reais — e cósmicos.
+          </p>
+        </div>
+      </CardContent>
+
+      {/* Footer */}
+      <footer className="text-center p-6 bg-white/5 border-t border-border/40 text-muted-foreground text-sm">
+        <p>&copy; 2025 Equipe Exoplanet Explorer - NASA Space Apps Challenge</p>
+      </footer>
+    </Card>
+  )
+}
