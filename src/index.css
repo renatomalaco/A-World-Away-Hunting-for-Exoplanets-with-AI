@@ -45,7 +45,7 @@
   --radius: 0.625rem;
   --background: transparent;
   --foreground: oklch(0.985 0 0); /* Texto claro para fundo escuro */
-  --card: oklch(0.1 0.05 250 / 0.5); /* Azul escuro semi-transparente */
+  --card: oklch(0.1 0.05 250 / 0.9);
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.1 0.05 250);
   --popover-foreground: oklch(0.985 0 0);
@@ -81,7 +81,7 @@
 .dark {
   --background: transparent;
   --foreground: oklch(0.985 0 0);
-  --card: oklch(0.1 0.05 250 / 0.5); /* Azul escuro semi-transparente */
+  --card: oklch(0.1 0.05 250 / 0.9);
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.1 0.05 250);
   --popover-foreground: oklch(0.985 0 0);
