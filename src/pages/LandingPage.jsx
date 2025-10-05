@@ -9,7 +9,7 @@ const LandingPage = () => {
     <div className="flex flex-col items-center text-center">
       {/* Hero Section */}
       <section
-        className="w-full h-[60vh] md:h-[70vh] bg-cover bg-center bg-no-repeat rounded-lg flex flex-col justify-center items-center text-white relative"
+        className="w-full h-[70vh] md:h-[80vh] bg-cover bg-center bg-no-repeat rounded-lg flex flex-col justify-center items-center text-white relative"
         style={{ backgroundImage: `url('/image_bdf04c.jpg')` }}
       >
         <div className="absolute inset-0 bg-black/60 rounded-lg" />
@@ -17,7 +17,7 @@ const LandingPage = () => {
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
             Caça a Exoplanetas com Inteligência Artificial
           </h1>
-          <p className="mt-4 max-w-2xl text-lg md:text-xl text-muted-foreground text-gray-300">
+          <p className="mt-4 max-w-2xl text-lg md:text-xl text-gray-300">
             Utilize um modelo de Machine Learning para classificar candidatos a exoplanetas a partir de dados da NASA.
           </p>
           <Button asChild size="lg" className="mt-8">
@@ -40,7 +40,8 @@ const LandingPage = () => {
               <Orbit className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
-              <p className="text-xs text-muted-foreground">
+              {/* --- ALTERAÇÃO AQUI --- */}
+              <p className="text-sm text-muted-foreground">
                 Mede a diminuição do brilho de uma estrela quando um planeta passa à sua frente, a principal técnica usada nos dados do Kepler.
               </p>
             </CardContent>
@@ -51,7 +52,8 @@ const LandingPage = () => {
               <BarChart className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
-              <p className="text-xs text-muted-foreground">
+              {/* --- ALTERAÇÃO AQUI --- */}
+              <p className="text-sm text-muted-foreground">
                 Nosso sistema usa um classificador treinado para distinguir entre "Candidato", "Confirmado" e "Falso Positivo".
               </p>
             </CardContent>
@@ -62,7 +64,8 @@ const LandingPage = () => {
               <Rocket className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
-              <p className="text-xs text-muted-foreground">
+              {/* --- ALTERAÇÃO AQUI --- */}
+              <p className="text-sm text-muted-foreground">
                 A interface se comunica com um backend Python (Flask) que executa o modelo de IA e retorna as predições em tempo real.
               </p>
             </CardContent>

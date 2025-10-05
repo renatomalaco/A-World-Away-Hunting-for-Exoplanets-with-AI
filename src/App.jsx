@@ -1,5 +1,6 @@
+// src/App.jsx
 import { Route, Routes } from 'react-router-dom';
-import Layout from './components/Layout';
+import MainLayout from './components/MainLayout'; // Importe o novo layout
 import LandingPage from './pages/LandingPage';
 import Sobre from './pages/Sobre';
 import Analise from './pages/Analise';
@@ -7,8 +8,8 @@ import Analise from './pages/Analise';
 function App() {
   return (
     <Routes>
-      <Route element={<Layout />}>
-        <Route path="/" element={<LandingPage />} />"
+      <Route element={<MainLayout />}>
+        <Route path="/" element={<LandingPage />} /> {/* Corrigido: Removido aspas extras */}
         <Route path="/analise" element={<Analise />} />
         <Route path="/sobre" element={<Sobre />} />
       </Route>
